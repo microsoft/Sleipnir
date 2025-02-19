@@ -7,6 +7,42 @@ verification of complex SoC designs. This repo contains the sleipnir tool and a 
 The paper describing the tool is published as part of DVCon 2025 proceedings. It is available at
 {TBD}.
 
+# Quick Start
+To get started with sleipnir, clone the repo and install the requirements.
+
+1. Clone the repo
+```bash
+git clone <repo_path>
+```
+2. Create a virtual environment
+```bash
+python3 -m venv sleipnir
+```
+3. Activate the virtual environment
+```bash
+source sleipnir/bin/activate
+```
+4. Install the requirements
+```bash
+pip install -r requirements.txt
+```
+5. Set the environment variable
+```bash
+export ELF_PATH=<path_to_sleipnir_repo>/build
+```
+6. Compile the C library with debug symbols
+```bash
+gcc -g lib/sleipnir.c -o build/frame.elf
+```
+7. Run the tool
+```bash
+cd build
+python3 ../src/sleipnir.py ../test/input.yml output.yml
+```
+Outputs are saved in the `build` directory.
+
+# Examples
+
 ## Contributing
 
 This project welcomes contributions and suggestions.  Most contributions require you to agree to a
