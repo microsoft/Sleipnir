@@ -59,7 +59,7 @@ def gen_frames(test: dict) -> None:
     # Add the cmds filename to the params
     dp.add_file_to_params(bin_name_frame, dp.VARNAME_FILE_FRAME, params)
 
-    # Write params that are read by SleipnirHandler in Bifrost
+    # Write params that are read by the C library
     params[dp.VARNAME_NUM_CMDS_FRAME] = num_cmds
 
 
