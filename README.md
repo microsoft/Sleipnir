@@ -32,6 +32,7 @@ export ELF_PATH=<path_to_sleipnir_repo>/build
 ```
 6. Compile the C library with debug symbols
 ```bash
+mkdir -p build
 gcc -g lib/sleipnir.c -o build/frame.elf
 ```
 7. Run the tool
