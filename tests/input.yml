@@ -1,0 +1,15 @@
+# Copyright (c) Microsoft Corporation.
+# Licensed under the MIT License.
+
+seed: 0x1234
+test:
+  - id: 0
+    params:
+      sleipnir:
+        frame:
+          num_cmds: 10
+          rnd_cfg:
+            constraints_frames:
+              small_height: frame.fields.height < 128
+              odd_width_only: frame.fields.width[0] == 1
+        data_file_size: 1024

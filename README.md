@@ -1,14 +1,47 @@
 # Project
 
-> This repo has been populated by an initial template to help get you started. Please
-> make sure to update the content to build a great experience for community-building.
+Sleipnir is a tool for randomizing software data types in python. It is designed to help aid design
+verification of complex SoC designs. This repo contains the sleipnir tool and a set of examples.
 
-As the maintainer of this project, please make a few updates:
+# Paper
+The paper describing the tool is published as part of DVCon 2025 proceedings. It is available at
+{TBD}.
 
-- Improving this README.MD file to provide a great experience
-- Updating SUPPORT.MD with content about this project's support experience
-- Understanding the security reporting process in SECURITY.MD
-- Remove this section from the README
+# Quick Start
+To get started with sleipnir, clone the repo and install the requirements.
+
+1. Clone the repo
+```bash
+git clone <repo_path>
+```
+2. Create a virtual environment
+```bash
+python3 -m venv sleipnir
+```
+3. Activate the virtual environment
+```bash
+source sleipnir/bin/activate
+```
+4. Install the requirements
+```bash
+pip install -r requirements.txt
+```
+5. Set the environment variable
+```bash
+export ELF_PATH=<path_to_sleipnir_repo>/build
+```
+6. Compile the C library with debug symbols
+```bash
+gcc -g lib/sleipnir.c -o build/frame.elf
+```
+7. Run the tool
+```bash
+cd build
+python3 ../src/sleipnir.py ../test/input.yml output.yml
+```
+Outputs are saved in the `build` directory.
+
+# Examples
 
 ## Contributing
 

@@ -1,0 +1,40 @@
+# Copyright (c) Microsoft Corporation.
+# Licensed under the MIT License.
+
+# The 80 char default is low; 100 is a good balance in allowing side-by-side
+# code display in modern monitors while reducing number of split line statements
+line-length = 100
+
+# Skip compatibility checks for lower versions
+target-version = "py312"
+
+# Enable fix behavior by-default when running ruff
+fix = true
+
+# Use Azure Pipeline logging commands format
+output-format = "full"
+
+[lint]
+select = ['ALL']
+
+# Waivers
+ignore = [
+    'COM812', # Trailing commas for all function arguments is not very readable
+    'TRY003', # Long exception names are fine (limit is very small)
+    'S311', # random module not used for authentication
+    'TD003', # Not feasible to link an ADO for each TODO
+    'FIX002', # TODOs are ok at this stage of the project
+]
+
+[lint.flake8-comprehensions]
+allow-dict-calls-with-keyword-arguments = true
+
+[lint.isort]
+combine-as-imports = true
+force-single-line = true
+force-wrap-aliases = true
+
+[lint.pydocstyle]
+convention = "google"
+
+# aliases
